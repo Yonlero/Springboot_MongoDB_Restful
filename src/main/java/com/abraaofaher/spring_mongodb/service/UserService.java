@@ -1,6 +1,7 @@
 package com.abraaofaher.spring_mongodb.service;
 
 import com.abraaofaher.spring_mongodb.domain.User;
+import com.abraaofaher.spring_mongodb.dto.UserDTO;
 import com.abraaofaher.spring_mongodb.repository.UserRepository;
 import com.abraaofaher.spring_mongodb.service.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,13 @@ public class UserService {
     public User findById(String id){
         Optional<User> user = repo.findById(id);
         return user.orElseThrow(() -> new ObjectNotFoundException("Rapazzzz, achei não o"));
+    }
+
+    public User insert(User obj){
+        return repo.insert(obj);
+    }
+
+    public User fromDTO(UserDTO objDto){
+        return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
     }
 }
