@@ -3,7 +3,6 @@ package com.abraaofaher.spring_mongodb.resources;
 import com.abraaofaher.spring_mongodb.domain.Post;
 import com.abraaofaher.spring_mongodb.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureOrder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
